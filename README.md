@@ -6,6 +6,14 @@ One of the most exciting areas in all of data science right now is wearable comp
 
 The data for the project is located <a href="https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip">here</a>.
 
+# To get the tidy data:
+1. Open R Program (I used RStudio)
+2. Set WD to desired directory
+3. run source("run_analysis.R") with provided script
+4. In R console, view tidyDataAVG   OR open created text file "tidy-UCI-HAR-dataset-average.txt"
+
+
+
 The script called run_analysis.R does the following.
 
 1. Merges the training and the test sets to create one data set.
@@ -13,3 +21,11 @@ The script called run_analysis.R does the following.
 3. Uses descriptive activity names to name the activities in the data set
 4. Appropriately labels the data set with descriptive variable names.
 5.  From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+
+output from run_analysis.R creates two files, one called tidy-UCI-HAR-dataset.txt which satisfies #3 & #4 and one called tidy-UCI-HAR-dataset-average.txt which satisfies #5 above.
+
+The dataset is considered 'tidy' because:
+1. Each row contains one observation
+2. Each variable is split out into its own column and contains only one variable
+3. Changed names to be user-friendly
+4. Consolidated important datapoints on to a single table (merged with no duplicates)

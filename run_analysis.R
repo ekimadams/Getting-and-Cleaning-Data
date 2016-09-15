@@ -62,16 +62,16 @@ names(y) <- "Activity"
 names(subject) <- "Subject"
 
 # Combines data table by columns
-tidyDataSet <- cbind(subject, y, x)
+tidyData <- cbind(subject, y, x)
 # 5. Creates a 2nd, independent tidy data set with the average of each variable for each activity and each subject:
-p <- tidyDataSet[, 3:dim(tidyDataSet)[2]] 
-tidyDataAVGSet <- aggregate(p,list(tidyDataSet$Subject, tidyDataSet$Activity), mean)
+p <- tidyData[, 3:dim(tidyData)[2]] 
+tidyDataAVG <- aggregate(p,list(tidyData$Subject, tidyData$Activity), mean)
 
 # Activity and Subject name of columns 
-names(tidyDataAVGSet)[1] <- "Subject"
-names(tidyDataAVGSet)[2] <- "Activity"
+names(tidyDataAVG)[1] <- "Subject"
+names(tidyDataAVG)[2] <- "Activity"
 
 # Created csv (tidy data set) in diretory
-write.table(tidyDataSet, tidyDataFile)
+write.table(tidyData, tidyDataFile)
 # Created csv (tidy data set AVG) in diretory
-write.table(tidyDataAVGSet, tidyDataFileAVGtxt)
+write.table(tidyDataAVG, tidyDataFileAVGtxt)
